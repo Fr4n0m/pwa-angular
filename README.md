@@ -1,13 +1,6 @@
-# MidudevPwa
+# Angular PWA Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
-
-## Course Setup
-
-Para comenzar el curso, utiliza la rama `initial` que contiene el punto de partida inicial:
-```bash
-git checkout initial
-```
+A Progressive Web Application built with Angular that demonstrates modern web capabilities and offline functionality.
 
 ## Development server
 
@@ -28,24 +21,21 @@ This will compile your project and store the build artifacts in the `dist/` dire
 To test the Progressive Web App (PWA) functionality locally:
 
 1. First build the project for production:
+
 ```bash
 ng build
 ```
 
 2. Install http-server globally (if you don't have it):
+
 ```bash
 npm install -g http-server
 ```
 
 3. Serve the built files from the dist directory:
+
 ```bash
 http-server -p 8080 -c-1 dist/midudev-pwa/browser
 ```
 
 Access your PWA at `http://localhost:8080`. The service worker will only work in production mode and over HTTPS or localhost.
-
-## Additional Resources
-
-- Si deseas más recursos sobre Angular, visita mi canal de YouTube [**dominicode**](https://youtube.com/dominicode)
-- Para más información sobre Angular CLI, consulta la [documentación oficial](https://angular.dev/tools/cli)
-
