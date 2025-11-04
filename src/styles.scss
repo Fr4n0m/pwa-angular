@@ -96,7 +96,7 @@ mat-card {
   margin-bottom: 2rem;
   border: 1px solid $border-color;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  overflow: hidden;
+  overflow: visible !important;
 
   &:hover {
     transform: translateY(-2px);
@@ -150,6 +150,7 @@ mat-card {
 
   &.predictions-card mat-card-content {
     padding: 0 !important;
+    overflow: visible !important;
   }
 
   mat-card-actions {
@@ -241,6 +242,7 @@ button {
 // ========================================
 mat-list {
   padding: 0 !important;
+  overflow: visible !important;
 
   mat-list-item {
     border-bottom: 1px solid $border-color;
@@ -251,6 +253,7 @@ mat-list {
     gap: 1.5rem !important;
     height: auto !important;
     min-height: 90px !important;
+    overflow: visible !important;
 
     // Asegurar gap en el contenido de Angular Material
     .mat-mdc-list-item-unscoped-content {
@@ -258,6 +261,11 @@ mat-list {
       align-items: center !important;
       gap: 1.5rem !important;
       width: 100% !important;
+      overflow: visible !important;
+    }
+
+    .mdc-list-item__content {
+      overflow: visible !important;
     }
 
     &:last-child {
@@ -452,9 +460,15 @@ mat-spinner {
     padding: 1.25rem 1rem !important;
     min-height: 70px !important;
     gap: 1rem !important;
+    overflow: visible !important;
 
     .mat-mdc-list-item-unscoped-content {
       gap: 1rem !important;
+      overflow: visible !important;
+    }
+
+    .mdc-list-item__content {
+      overflow: visible !important;
     }
 
     &.top-result {
