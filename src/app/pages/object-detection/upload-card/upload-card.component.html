@@ -1,17 +1,20 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Sube una imagen</mat-card-title>
+    <mat-card-title>
+      <mat-icon class="title-icon">cloud_upload</mat-icon>
+      Sube tu Imagen
+    </mat-card-title>
   </mat-card-header>
   <mat-card-content>
       <input #imageUpload hidden type="file" accept="image/*" (change)="onFileSelected($event)"/>
       <button mat-flat-button color="primary" (click)="imageUpload.click()" [disabled]="isPredicting()">
-        <mat-icon>upload</mat-icon>
-        Seleccionar imagen
+        <mat-icon>add_photo_alternate</mat-icon>
+        Seleccionar Imagen
       </button>
 
       @if (!isPredicting() && file()) {
         <div class="image-container">
-          <img [src]="previewUrl()" alt="Vista previa" class="preview-image" />
+          <img [src]="previewUrl()" alt="Vista previa de la imagen" class="preview-image" />
         </div>
       }
 
@@ -21,8 +24,8 @@
       @if (!isPredicting() && file()) {
         <mat-card-actions>
           <button mat-raised-button color="accent" (click)="predict.emit()"  [disabled]="isPredicting()">
-            <mat-icon>image_search</mat-icon>
-            {{ !isPredicting() ? 'Detectar Objectos' : 'Detectando.....' }}
+            <mat-icon>auto_awesome</mat-icon>
+            {{ !isPredicting() ? 'Analizar con IA' : 'Analizando...' }}
           </button>
         </mat-card-actions>
       }

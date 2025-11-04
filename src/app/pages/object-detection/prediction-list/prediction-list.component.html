@@ -1,15 +1,28 @@
-<mat-card>
+<mat-card class="predictions-card">
   <mat-card-header>
-    <mat-card-title>Predicciones</mat-card-title>
+    <mat-card-title>
+      <mat-icon class="title-icon">psychology</mat-icon>
+      Resultados del Análisis
+    </mat-card-title>
   </mat-card-header>
-  <mat-list>
-    @for(prediction of predictions(); track prediction.className ){
-          <mat-list-item>
-            <span class="prediction-label">{{prediction.className }}</span>
-            <span class="prediction-prob">
-              {{ prediction.probability| percent:'1.2-2' }}
-            </span>
-          </mat-list-item>
-    }
-  </mat-list>
-</mat-card> 
+  <mat-card-content>
+    <mat-list>
+      @for(prediction of predictions(); track prediction.className; let i = $index){
+            <mat-list-item [class.top-result]="i === 0">
+              <span class="prediction-rank">
+                {{ i + 1 }}
+                @if(i === 0) {
+                  <span class="winner-badge">👑</span>
+                }
+              </span>
+              <span class="prediction-prob">
+                {{ prediction.probability | percent:'1.1-1' }}
+              </span>
+              <span class="prediction-text">
+                {{ prediction.className }}
+              </span>
+            </mat-list-item>
+      }
+    </mat-list>
+  </mat-card-content>
+</mat-card>

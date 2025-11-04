@@ -11,6 +11,7 @@ const VERSION_READY = 'VERSION_READY';
   template: `
     @if(updateAvailable()) {
     <div class="update-banner">
+      <mat-icon>new_releases</mat-icon>
       <span>{{ newVersionAvailable }}</span>
       <button mat-flat-button (click)="activateUpdate()">
         <mat-icon>refresh</mat-icon>
@@ -22,8 +23,8 @@ const VERSION_READY = 'VERSION_READY';
   imports: [MatIconModule, MatButtonModule],
 })
 export class CheckUpdateComponent implements OnInit {
-  newVersionAvailable = '¡Nueva versión disponible!';
-  updateNow = 'Actualizar ahora';
+  newVersionAvailable = '🎉 Nueva versión disponible';
+  updateNow = 'Actualizar';
   updateAvailable = signal(false);
 
   private readonly _swUpdate = inject(SwUpdate)
@@ -44,4 +45,3 @@ export class CheckUpdateComponent implements OnInit {
     this._document.defaultView?.location.reload();
   }
 }
-

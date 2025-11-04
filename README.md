@@ -31,12 +31,14 @@ Una Progressive Web Application moderna construida con Angular 19 que utiliza in
 ## 🚀 Instalación
 
 1. Clona el repositorio:
+
 ```bash
-git clone <tu-repositorio>
+git clone https://github.com/Fr4n0m/pwa-angular.git
 cd pwa-angular
 ```
 
 2. Instala las dependencias:
+
 ```bash
 npm install
 ```
@@ -72,6 +74,7 @@ Los artefactos de construcción se almacenarán en el directorio `dist/pwa-angul
 ### Build Optimizado
 
 El build de producción incluye:
+
 - Optimización y minificación de código
 - Tree-shaking para reducir el tamaño del bundle
 - Service Worker habilitado para funcionalidad PWA
@@ -82,21 +85,25 @@ El build de producción incluye:
 Para probar todas las funcionalidades PWA (Service Worker, modo offline, etc.):
 
 1. **Construye el proyecto para producción**:
+
 ```bash
 ng build
 ```
 
 2. **Instala http-server** (si no lo tienes):
+
 ```bash
 npm install -g http-server
 ```
 
 3. **Sirve los archivos compilados**:
+
 ```bash
 http-server -p 8080 -c-1 dist/pwa-angular/browser
 ```
 
 4. **Accede a la aplicación**:
+
    - Abre tu navegador en `http://localhost:8080`
    - El Service Worker solo funcionará en producción y sobre HTTPS o localhost
 
@@ -180,13 +187,13 @@ La aplicación está configurada para funcionar offline mediante:
 
 ## 🎨 Temas y Estilos
 
-- Tema principal: Rose-Red de Angular Material
 - Estilos personalizados en SCSS
 - Diseño responsivo para todos los dispositivos
 
 ## 📱 Compatibilidad
 
 La aplicación es compatible con:
+
 - Chrome/Edge (recomendado)
 - Firefox
 - Safari
@@ -198,27 +205,30 @@ La app incluye un componente que notifica automáticamente cuando hay una nueva 
 
 ## 📝 Scripts Disponibles
 
-| Comando | Descripción |
-|---------|-------------|
-| `npm start` | Inicia el servidor de desarrollo |
+| Comando         | Descripción                           |
+| --------------- | ------------------------------------- |
+| `npm start`     | Inicia el servidor de desarrollo      |
 | `npm run build` | Compila la aplicación para producción |
-| `npm test` | Ejecuta los tests unitarios |
-| `npm run lint` | Ejecuta el linter de código |
+| `npm test`      | Ejecuta los tests unitarios           |
+| `npm run lint`  | Ejecuta el linter de código           |
 | `npm run watch` | Compila en modo watch para desarrollo |
 
 ## 🐛 Solución de Problemas
 
 ### El Service Worker no funciona
+
 - Asegúrate de estar en modo producción (`ng build`)
 - Verifica que estés usando HTTPS o localhost
 - Limpia el caché del navegador
 
 ### El modelo no carga
+
 - Verifica tu conexión a internet la primera vez
 - Una vez cargado, el modelo se cachea para uso offline
 - Revisa la consola del navegador para errores
 
 ### La aplicación es lenta
+
 - El primer uso requiere descargar el modelo (~5-10 MB)
 - Usos posteriores son mucho más rápidos gracias al caché
 - Asegúrate de tener WebGL habilitado en tu navegador
@@ -232,10 +242,6 @@ Las contribuciones son bienvenidas. Por favor:
 3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
-
-## 📄 Licencia
-
-Este proyecto es privado.
 
 ## 👨‍💻 Autor
 
