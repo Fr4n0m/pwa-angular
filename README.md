@@ -35,7 +35,7 @@ npm install -g http-server
 3. Serve the built files from the dist directory:
 
 ```bash
-http-server -p 8080 -c-1 dist/midudev-pwa/browser
+http-server -p 8080 -c-1 dist/pwa-angular/browser
 ```
 
 Access your PWA at `http://localhost:8080`. The service worker will only work in production mode and over HTTPS or localhost.

@@ -1,7 +1,6 @@
 import { Component, input } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-
 @Component({
   selector: 'app-header',
   imports: [MatToolbarModule],
@@ -12,5 +11,5 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   `,
 })
 export class HeaderComponent {
-  title = input<string>('Midudev Academia');
+  title = input<string>('PWA Angular');
 }

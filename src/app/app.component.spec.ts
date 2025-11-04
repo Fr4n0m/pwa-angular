@@ -14,16 +14,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'midudev-pwa' title`, () => {
+  it(`should have the 'pwa-angular' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('midudev-pwa');
+    expect(app.title).toEqual('pwa-angular');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, midudev-pwa');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Hello, pwa-angular'
+    );
   });
 });
