@@ -1,5 +1,7 @@
 # 🔍 Angular PWA - Object Detection
 
+![pwa-angular_1](https://github.com/user-attachments/assets/da792892-81ca-407c-a917-d3ce58bb52f1)
+
 Una Progressive Web Application moderna construida con Angular 19 que utiliza inteligencia artificial para detectar y clasificar objetos en imágenes en tiempo real, con capacidades offline completas.
 
 ## ✨ Características Principales
