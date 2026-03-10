@@ -1,254 +1,202 @@
-# 🔍 Angular PWA - Object Detection
+# Angular PWA - Object Detection
 
-![pwa-angular_1](https://github.com/user-attachments/assets/da792892-81ca-407c-a917-d3ce58bb52f1)
+![Angular](https://img.shields.io/badge/Angular-19.1.x-DD0031?logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.7.x-3178C6?logo=typescript&logoColor=white)
+![PWA](https://img.shields.io/badge/PWA-Enabled-5A0FC8?logo=pwa&logoColor=white)
+![TensorFlow.js](https://img.shields.io/badge/TensorFlow.js-4.22.x-FF6F00?logo=tensorflow&logoColor=white)
+![MobileNet](https://img.shields.io/badge/MobileNet-v2-FF9800)
+![Angular Material](https://img.shields.io/badge/Angular%20Material-19.1.x-3F51B5?logo=angular&logoColor=white)
+![Service Worker](https://img.shields.io/badge/Service%20Worker-Enabled-0F9D58)
 
-Una Progressive Web Application moderna construida con Angular 19 que utiliza inteligencia artificial para detectar y clasificar objetos en imágenes en tiempo real, con capacidades offline completas.
+Aplicacion web progresiva desarrollada con Angular para deteccion y clasificacion de objetos en imagenes usando TensorFlow.js (MobileNet), con capacidades offline.
 
-## ✨ Características Principales
+## 🌐 Navegacion rapida / Quick Navigation
 
-- 🤖 **Detección de Objetos con IA**: Utiliza TensorFlow.js con el modelo MobileNet V2 para clasificar imágenes
-- 📱 **Progressive Web App**: Funcionalidad offline completa con Service Workers
-- 🎨 **Material Design**: Interfaz moderna y responsiva con Angular Material (tema Rose-Red)
-- ⚡ **Alto Rendimiento**: Backend WebGL para aceleración de GPU en las predicciones
-- 🔄 **Actualizaciones Automáticas**: Sistema de notificaciones para nuevas versiones de la app
-- 📷 **Carga de Imágenes**: Sube y analiza imágenes directamente desde tu dispositivo
-- 🌐 **Offline First**: La app funciona completamente sin conexión una vez instalada
+- [Version en Espanol](#-version-en-espanol)
+- [English Version](#-english-version)
 
-## 🛠️ Tecnologías Utilizadas
+---
 
-- **Framework**: Angular 19.1.5
-- **UI Library**: Angular Material 19.1.3
-- **PWA**: Angular Service Worker
-- **IA/ML**: TensorFlow.js 4.22.0 + MobileNet 2.1.1
-- **Lenguaje**: TypeScript 5.7.3
-- **Estilos**: SCSS
-- **Linting**: ESLint con Angular ESLint
+## 🇪🇸 Version en Espanol
 
-## 📋 Requisitos Previos
+### 🧭 Descripcion
 
-- Node.js (v18 o superior recomendado)
-- npm o yarn
-- Angular CLI
+Esta aplicacion permite cargar una imagen y obtener predicciones de objetos directamente en el navegador. El procesamiento se ejecuta en cliente, sin enviar imagenes a servidores externos para inferencia.
 
-## 🚀 Instalación
+### ✨ Caracteristicas
 
-1. Clona el repositorio:
+- 🤖 Clasificacion de imagenes con TensorFlow.js + MobileNet.
+- 📱 Soporte PWA instalable y funcionamiento offline.
+- ⚡ Predicciones aceleradas por GPU mediante WebGL.
+- 🔄 Notificaciones de actualizacion cuando hay nueva version.
+- 🎨 Interfaz responsiva con Angular Material.
+
+### 🛠️ Stack tecnologico
+
+- Angular 19
+- TypeScript 5
+- Angular Material
+- Angular Service Worker
+- TensorFlow.js + MobileNet
+- SCSS + ESLint
+
+### 📋 Requisitos
+
+- Node.js 18+
+- npm
+- Angular CLI (opcional, recomendado)
+
+### 🚀 Instalacion
 
 ```bash
 git clone https://github.com/Fr4n0m/pwa-angular.git
 cd pwa-angular
-```
-
-2. Instala las dependencias:
-
-```bash
 npm install
 ```
 
-## 💻 Uso en Desarrollo
-
-### Servidor de Desarrollo
-
-Ejecuta el servidor de desarrollo:
+### 💻 Desarrollo local
 
 ```bash
 npm start
-# o
-ng serve
 ```
 
-Navega a `http://localhost:4200/`. La aplicación se recargará automáticamente si modificas algún archivo fuente.
+Aplicacion disponible en `http://localhost:4200`.
 
-> ⚠️ **Nota**: El Service Worker no está activo en modo desarrollo, solo en producción.
-
-## 🏗️ Construcción para Producción
-
-Para compilar el proyecto:
+### 🏗️ Build de produccion
 
 ```bash
 npm run build
-# o
-ng build
 ```
 
-Los artefactos de construcción se almacenarán en el directorio `dist/pwa-angular/`.
+Salida del build: `dist/pwa-angular/`.
 
-### Build Optimizado
-
-El build de producción incluye:
-
-- Optimización y minificación de código
-- Tree-shaking para reducir el tamaño del bundle
-- Service Worker habilitado para funcionalidad PWA
-- Precarga del modelo MobileNet para uso offline
-
-## 🌐 Probar la PWA Localmente
-
-Para probar todas las funcionalidades PWA (Service Worker, modo offline, etc.):
-
-1. **Construye el proyecto para producción**:
+### 🌍 Probar modo PWA (offline)
 
 ```bash
-ng build
+npm run build
+npx http-server -p 8080 -c-1 dist/pwa-angular/browser
 ```
 
-2. **Instala http-server** (si no lo tienes):
+Abrir `http://localhost:8080`.
 
-```bash
-npm install -g http-server
-```
-
-3. **Sirve los archivos compilados**:
-
-```bash
-http-server -p 8080 -c-1 dist/pwa-angular/browser
-```
-
-4. **Accede a la aplicación**:
-
-   - Abre tu navegador en `http://localhost:8080`
-   - El Service Worker solo funcionará en producción y sobre HTTPS o localhost
-
-5. **Instala la PWA**:
-   - En Chrome/Edge, busca el ícono de instalación en la barra de direcciones
-   - Acepta instalar la aplicación
-   - La app ahora funcionará offline y tendrá su propio ícono en tu sistema
-
-## 🧪 Testing
-
-### Ejecutar Tests Unitarios
+### 🧪 Calidad y testing
 
 ```bash
 npm test
-# o
-ng test
-```
-
-Esto ejecutará los tests usando Karma.
-
-### Linting
-
-```bash
 npm run lint
-# o
-ng lint
 ```
 
-## 📁 Estructura del Proyecto
+### 📜 Scripts principales
 
-```
-pwa-angular/
-├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   └── shared/          # Componentes compartidos (header, check-update)
-│   │   ├── pages/
-│   │   │   └── object-detection/ # Módulo principal de detección
-│   │   │       ├── models/       # Interfaces y tipos
-│   │   │       ├── prediction-list/  # Componente de listado de predicciones
-│   │   │       ├── upload-card/      # Componente de carga de imágenes
-│   │   │       ├── object-detection.component.ts
-│   │   │       └── object-detection.service.ts
-│   │   ├── app.component.ts
-│   │   ├── app.config.ts
-│   │   └── app.routes.ts
-│   ├── styles.scss              # Estilos globales
-│   └── index.html
-├── public/                       # Recursos estáticos (favicon, manifest, etc.)
-├── ngsw-config.json             # Configuración del Service Worker
-├── angular.json                 # Configuración de Angular
-├── package.json
-└── README.md
-```
+| Script | Descripcion |
+| --- | --- |
+| `npm start` | Servidor de desarrollo |
+| `npm run build` | Build de produccion |
+| `npm run watch` | Build en modo watch |
+| `npm test` | Tests unitarios |
+| `npm run lint` | Linter |
 
-## 🔧 Configuración PWA
+### 🤝 Contribuciones
 
-La aplicación está configurada para funcionar offline mediante:
+Las contribuciones son bienvenidas y los PRs son la mejor via para proponer mejoras.
 
-- **Service Worker**: Cachea automáticamente los recursos de la aplicación
-- **Manifest**: Define cómo se ve la app cuando se instala
-- **Estrategias de Caché**:
-  - `prefetch`: App shell y recursos críticos
-  - `lazy`: Assets como imágenes
-  - Modelo MobileNet precargado para uso offline
+1. Haz fork del repositorio.
+2. Crea una rama: `git checkout -b feature/nombre-cambio`.
+3. Realiza commits claros y pequeños.
+4. Ejecuta `npm run lint` y `npm test`.
+5. Abre un Pull Request con una descripcion concreta del cambio.
 
-## 🤖 Cómo Funciona la Detección de Objetos
-
-1. El usuario carga una imagen desde su dispositivo
-2. La imagen se pasa al modelo MobileNet V2 precargado
-3. El modelo realiza la clasificación usando aceleración GPU (WebGL)
-4. Se muestran las predicciones con su nivel de confianza
-5. Todo el proceso ocurre en el navegador, sin enviar datos a servidores externos
-
-### Modelo de IA
-
-- **Modelo**: MobileNet V2 (versión 2, alpha 1.0)
-- **Fuente**: TensorFlow Hub
-- **Capacidades**: Clasificación de ~1000 categorías de objetos
-- **Rendimiento**: Optimizado para ejecución en navegadores
-
-## 🎨 Temas y Estilos
-
-- Estilos personalizados en SCSS
-- Diseño responsivo para todos los dispositivos
-
-## 📱 Compatibilidad
-
-La aplicación es compatible con:
-
-- Chrome/Edge (recomendado)
-- Firefox
-- Safari
-- Navegadores móviles modernos
-
-## 🔄 Actualizaciones
-
-La app incluye un componente que notifica automáticamente cuando hay una nueva versión disponible, permitiendo al usuario actualizar con un solo clic.
-
-## 📝 Scripts Disponibles
-
-| Comando         | Descripción                           |
-| --------------- | ------------------------------------- |
-| `npm start`     | Inicia el servidor de desarrollo      |
-| `npm run build` | Compila la aplicación para producción |
-| `npm test`      | Ejecuta los tests unitarios           |
-| `npm run lint`  | Ejecuta el linter de código           |
-| `npm run watch` | Compila en modo watch para desarrollo |
-
-## 🐛 Solución de Problemas
-
-### El Service Worker no funciona
-
-- Asegúrate de estar en modo producción (`ng build`)
-- Verifica que estés usando HTTPS o localhost
-- Limpia el caché del navegador
-
-### El modelo no carga
-
-- Verifica tu conexión a internet la primera vez
-- Una vez cargado, el modelo se cachea para uso offline
-- Revisa la consola del navegador para errores
-
-### La aplicación es lenta
-
-- El primer uso requiere descargar el modelo (~5-10 MB)
-- Usos posteriores son mucho más rápidos gracias al caché
-- Asegúrate de tener WebGL habilitado en tu navegador
-
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Haz fork del proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 👨‍💻 Autor
-
-Proyecto desarrollado como demostración de capacidades PWA con Angular e Inteligencia Artificial.
+Si detectas un bug o quieres proponer una mejora, abre un Issue primero y lo revisamos.
 
 ---
 
-**¿Tienes preguntas o sugerencias?** No dudes en abrir un issue o contactar al equipo de desarrollo.
+## 🇬🇧 English Version
+
+### 🧭 Overview
+
+This Progressive Web App lets users upload an image and get object classification predictions directly in the browser using TensorFlow.js (MobileNet). Inference runs client-side.
+
+### ✨ Features
+
+- 🤖 Image classification with TensorFlow.js + MobileNet.
+- 📱 Installable PWA with offline support.
+- ⚡ GPU-accelerated predictions via WebGL.
+- 🔄 Update notifications when a new version is available.
+- 🎨 Responsive UI with Angular Material.
+
+### 🛠️ Tech stack
+
+- Angular 19
+- TypeScript 5
+- Angular Material
+- Angular Service Worker
+- TensorFlow.js + MobileNet
+- SCSS + ESLint
+
+### 📋 Requirements
+
+- Node.js 18+
+- npm
+- Angular CLI (optional, recommended)
+
+### 🚀 Installation
+
+```bash
+git clone https://github.com/Fr4n0m/pwa-angular.git
+cd pwa-angular
+npm install
+```
+
+### 💻 Local development
+
+```bash
+npm start
+```
+
+App runs at `http://localhost:4200`.
+
+### 🏗️ Production build
+
+```bash
+npm run build
+```
+
+Build output: `dist/pwa-angular/`.
+
+### 🌍 Test PWA mode (offline)
+
+```bash
+npm run build
+npx http-server -p 8080 -c-1 dist/pwa-angular/browser
+```
+
+Open `http://localhost:8080`.
+
+### 🧪 Quality and testing
+
+```bash
+npm test
+npm run lint
+```
+
+### 📜 Main scripts
+
+| Script | Description |
+| --- | --- |
+| `npm start` | Start dev server |
+| `npm run build` | Production build |
+| `npm run watch` | Watch build |
+| `npm test` | Unit tests |
+| `npm run lint` | Lint code |
+
+### 🤝 Contributions
+
+Contributions are welcome, and Pull Requests are the preferred way to propose improvements.
+
+1. Fork the repository.
+2. Create a branch: `git checkout -b feature/your-change`.
+3. Keep commits clear and focused.
+4. Run `npm run lint` and `npm test`.
+5. Open a PR with a concise explanation of the change.
+
+If you find a bug or want to discuss an enhancement, please open an Issue first.
